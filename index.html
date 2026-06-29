@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+  <style>
+    :root {
+      --primary-gradient: linear-gradient(135deg, #ff416c 0%, #8a2387 100%);
+      --glass-bg: rgba(255, 255, 255, 0.75);
+      --glass-border: rgba(255, 255, 255, 0.4);
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      /* Premium multi-layered mesh background design */
+      background: radial-gradient(at 0% 0%, #dadada 0px, transparent 50%),
+        radial-gradient(at 100% 0%, #ffffff 0px, transparent 50%),
+        radial-gradient(at 100% 100%, #a07b8c 0px, transparent 50%),
+        radial-gradient(at 0% 100%, #882647 0px, transparent 50%);
+      background-color: linear-gradient(rgb(85, 38, 60), white);
+      background-attachment: fixed;
+      color: #d65454;
+      padding-top: 80px;
+      /* Offset for fixed navbar */
+    }
+
+    /* Textured Abstract Grid Layer (Optional Visual Polish) */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.01) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.01) 1px, transparent 1px);
+      background-size: 20px 20px;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+
+
+    .btn-gradient {
+      background: var(--primary-gradient);
+      color: white;
+      border: none;
+      transition: all 0.3s ease;
+    }
+
+    .btn-gradient:hover {
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(138, 35, 135, 0.3);
+    }
+
+    .section-title-line {
+      width: 60px;
+      height: 4px;
+      background: var(--primary-gradient);
+      margin: 0 auto 2.5rem auto;
+      border-radius: 2px;
+    }
+
+    /* Core Section Wrappers to float neatly over the backdrop */
+    .glass-section-card {
+      background: var(--glass-bg);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--glass-border);
+      border-radius: 24px;
+      padding: 3rem 2rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+      margin-bottom: 4rem;
+    }
+
+    /* Navbar Glassmorphism */
+    .navbar-glass {
+      background: rgba(33, 37, 41, 0.85) !important;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    /* Skill Cards */
+    .skill-card {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 1rem 2.5rem rgba(138, 35, 135, 0.1) !important;
+    }
+
+    /* Project Cards */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-radius: 18px;
+      border: 1px solid var(--glass-border);
+      transition: all 0.3s ease;
+    }
+
+    .glass-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.06) !important;
+    }
+
+    .project-top {
+      padding: 12px 20px;
+      background: rgba(0, 0, 0, 0.03);
+      border-top-left-radius: 18px;
+      border-top-right-radius: 18px;
+      display: flex;
+      gap: 6px;
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+
+    .dot.red {
+      background: #ff5f56;
+    }
+
+    .dot.yellow {
+      background: #ffbd2e;
+    }
+
+    .dot.green {
+      background: #27c93f;
+    }
+
+    /* Education Timeline Block Elements */
+    .education-box {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      transition: all 0.3s ease;
+    }
+
+    .education-box:hover {
+      transform: translateX(4px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.04) !important;
+    }
+
+    /* Resume UI Card Structure */
+    .resume-card {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 20px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+      overflow: hidden;
+      border: 1px solid var(--glass-border);
+    }
+
+    .resume-header {
+      background: linear-gradient(135deg, #1f2327 0%, #111315 100%);
+      color: white;
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .resume .section-title {
+      font-weight: 700;
+
+      color: #8a2387;
+      margin-bottom: 1rem;
+      letter-spacing: 0.5px;
+    }
+
+    .skill-badge {
+      display: inline-block;
+      background: #f0f2f6;
+      color: #495057;
+      padding: 0.4rem 0.9rem;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      margin: 0.25rem;
+      font-weight: 500;
+      border: 1px solid rgba(0, 0, 0, 0.03);
+    }
+
+    /* Achievement Individual Nodes */
+    .stat-box {
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid var(--glass-border);
+      border-radius: 16px;
+      transition: transform 0.3s;
+    }
+
+    .stat-box:hover {
+      transform: scale(1.03);
+    }
+
+    /* Form Fields */
+    .form-control {
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      background: rgba(255, 255, 255, 0.9);
+    }
+
+    .form-control:focus {
+      background: #fff;
+      box-shadow: 0 0 0 0.25rem rgba(138, 35, 135, 0.15);
+      border-color: #8a2387;
+    }
+
+    /* WhatsApp UI Node link */
+    .whatsapp-float {
+      width: 52px;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      z-index: 1000;
+      transition: transform 0.2s;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+    }
+
+    :root {
+      --primary-gradient: linear-gradient(135deg, #ff416c, #8a2387);
+      --glass-bg: rgba(255, 255, 255, 0.75);
+      --glass-border: rgba(255, 255, 255, 0.25);
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      scroll-behavior: smooth;
+      padding-top: 76px;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #f1f1f1;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #8a2387;
+      border-radius: 10px;
+    }
+
+    /* Gradients & Buttons */
+    .text-gradient {
+      background: var(--primary-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .btn-gradient {
+      background: var(--primary-gradient);
+      color: white !important;
+      border: none;
+      transition: all 0.3s ease;
+    }
+
+    .btn-gradient:hover {
+      opacity: 0.9;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(230, 49, 120, 0.4);
+    }
+
+    /* Layout Sub-elements */
+    .section-title-line {
+      width: 60px;
+      height: 4px;
+      background: var(--primary-gradient);
+      margin: 10px auto 40px auto;
+      border-radius: 2px;
+    }
+
+    /* Glassmorphism Cards */
+    .glass-card {
+      background: var(--glass-bg);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid var(--glass-border);
+      border-radius: 16px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .glass-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.08) !important;
+    }
+
+    /* Project top dots simulation */
+    .project-top {
+      padding: 12px 16px 4px 16px;
+      display: flex;
+      gap: 6px;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .dot.red {
+      background-color: #ff5f56;
+    }
+
+    .dot.yellow {
+      background-color: #ffbd2e;
+    }
+
+    .dot.green {
+      background-color: #27c93f;
+    }
+
+    /* Skill & Resume badges */
+    .skill-card {
+      transition: all 0.3s ease;
+      border-radius: 12px;
+    }
+
+    .skill-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.05) !important;
+    }
+
+    .skill-badge {
+      background: #f0f2f5;
+      color: #495057;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin: 4px;
+    }
+
+    /* Resume UI Layout */
+    .resume-card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .resume-header {
+      background: linear-gradient(135deg, #ca548b, #5f595b);
+      color: white;
+      padding: 40px;
+    }
+
+    .resume-header h1 {
+      margin: 0;
+    }
+
+    .section-title {
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #8a2387;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    /* Floating Navigation Elements */
+    .whatsapp-float {
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      z-index: 1000;
+      transition: transform 0.3s ease;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+    }
+
+    .footer-links {
+      list-style-type: none;
+    }
+
+    .footer-links li {
+      list-style: none;
+      margin-bottom: 8px;
+    }
+
+    .footer-links a {
+      color: #adb5bd;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: #fff;
+    }
+
+    .social-icons a {
+      font-size: 1.3rem;
+      margin-right: 15px;
+      transition: color 0.2s;
+    }
+
+    .social-icons a:hover {
+      color: #ff416c !important;
+    }
+    /* --- Navbar Base & Transition --- */
+.custom-navbar {
+  transition: all 0.4s ease-in-out;
+}
+
+/* --- Animated Hover Underline for Links --- */
+.nav-link-grow {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-link-grow::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 2px;
+  left: 50%;
+  background-color: #0d6efd; /* You can change this to match your accent color */
+  transition: all 0.3s ease-in-out;
+  transform: translateX(-50%);
+}
+
+.nav-link-grow:hover::after,
+.nav-link-grow.active::after {
+  width: 80%;
+}
+
+/* --- Brand Logo Hover Pop --- */
+.brand-logo {
+  transition: transform 0.3s ease;
+}
+.navbar-brand:hover .brand-logo {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* --- Smooth Mobile Menu Collapse Slide --- */
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out, opacity 0.3s ease-in-out;
+  }
+
+  .navbar-collapse.show {
+    opacity: 1;
+    max-height: 500px; /* Adjust based on total height of links */
+  }
+}
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation Bar -->
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top shadow-sm py-3 custom-navbar">
+  <div class="container-fluid px-lg-5">
+    <a class="navbar-brand d-flex align-items-center" href="#home">
+      <img src="IMAGE/PANUU LOGO.webp" alt="Logo" style="width:40px; height:40px;" class="rounded-pill bg-light me-2 brand-logo"
+        onerror="this.src='https://picsum.photos/40'">
+      <span class="fw-bold tracking-wider fs-6">PRANALI SHINDE</span>
+    </a>
+    <button class="navbar-toggler border-0 collapsible-toggler" type="button" data-bs-toggle="collapse"
+      data-bs-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
+      <ul class="navbar-nav gap-1 text-center mt-3 mt-lg-0 align-items-center">
+        <li class="nav-item">
+          <a class="nav-link nav-link-grow px-3" data-bs-dismiss="collapse" href="#home">
+            <i class="bi bi-house-door-fill me-1"></i> HOME
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-link-grow px-3" data-bs-dismiss="collapse" href="#about">
+            <i class="bi bi-person-badge-fill me-1"></i> ABOUT
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-link-grow px-3" data-bs-dismiss="collapse" href="#skills">
+            <i class="bi bi-cpu-fill me-1"></i> SKILLS
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-link-grow px-3" data-bs-dismiss="collapse" href="#education">
+            <i class="bi bi-mortarboard-fill me-1"></i> EDUCATION
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-link-grow px-3" data-bs-dismiss="collapse" href="#projects">
+            <i class="bi bi-code-square me-1"></i> PROJECTS
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-link-grow px-3" data-bs-dismiss="collapse" href="#certification">
+            <i class="bi bi-patch-check-fill me-1"></i> CERTIFICATIONS
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-link-grow px-3" data-bs-dismiss="collapse" href="#achievement">
+            <i class="bi bi-trophy-fill me-1"></i> ACHIEVEMENTS
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-link-grow px-3" data-bs-dismiss="collapse" href="#resume">
+            <i class="bi bi-file-earmark-person-fill me-1"></i> RESUME
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-link-grow px-3" data-bs-dismiss="collapse" href="#contact">
+            <i class="bi bi-envelope-fill me-1"></i> CONTACT
+          </a>
+        </li>
+        <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+          <div id="google_translate_element"></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<script>
+
+  window.addEventListener('scroll', function () {
+  const navbar = document.querySelector('.custom-navbar');
+  if (window.scrollY > 50) {
+    navbar.classList.remove('py-3');
+    navbar.classList.add('py-2', 'bg-opacity-95'); // Shrinks padding and adds subtle transparency
+  } else {
+    navbar.classList.remove('py-2', 'bg-opacity-95');
+    navbar.classList.add('py-3');
+  }
+});
+</script>
+
+  <!-- Context Headline Banner -->
+  <div class="container mt-4 pt-2">
+    <div class="alert alert-primary animate__animated animate__zoomIn text-center py-3 border-0 shadow-sm"
+      style="background: rgba(13, 110, 253, 0.06); color: #0d6efd;">
+      <h5 class="m-0 fw-bold">Web Developer Personal Portfolio</h5>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero-section container-fluid py-5 d-flex align-items-center">
+    <div class="container">
+      <div class="row align-items-center gy-5">
+        <div class="col-lg-6 text-center text-lg-start order-2 order-lg-1">
+          <div class="hero-card p-2 animate__animated animate__fadeInLeft">
+            <span class="sub-title text-uppercase fw-bold text-muted mb-2 d-block small" style="letter-spacing: 2px;">
+              👋 Welcome to my portfolio
+            </span>
+            <h1 class="display-3 fw-bold text-dark mb-2">
+              Hi, I'm <span class="text-gradient">Pranali</span>
+            </h1>
+            <h2 class="h3 fw-semibold text-secondary mb-4">
+              Creative Web Developer
+            </h2>
+            <p class="lead text-secondary mb-5 fs-5 lh-base">
+              I craft responsive, user-friendly digital experiences using HTML, CSS,
+              Bootstrap, and JavaScript. Turning complex problems into elegant, modern designs is my passion.
+            </p>
+            <div class="d-flex flex-wrap justify-content-center justify-content-lg-start gap-3">
+              <a href="#projects" class="btn btn-gradient btn-lg px-4 py-2.5 fw-medium shadow-sm">View My Work</a>
+              <a href="#contact" class="btn btn-outline-dark btn-lg px-4 py-2.5 fw-medium">Let's Talk</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 order-1 order-lg-2 animate__animated animate__fadeInRight text-center">
+          <img src="IMAGE/pranali.jpg" alt="" width="400" height="500">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="container py-5">
+    <h2 class="text-center fw-bold">About Me</h2>
+    <div class="section-title-line"></div>
+    <div class="row align-items-center g-5">
+      <div class="col-md-4 text-center">
+        <img src="IMAGE/about.jpg" alt="Pranali Profile"
+          class="img-fluid rounded-circle shadow-lg border border-4 border-white"
+          style="width: 280px; height: 280px; object-fit: cover;" onerror="this.src='https://picsum.photos/280'">
+      </div>
+      <div class="col-md-8">
+        <h3 class="fw-bold mb-3 text-dark">Hello, I'm Pranali</h3>
+        <p class="text-secondary mb-3">
+          I am a passionate Web Developer with core knowledge of HTML5, CSS3, Bootstrap 5, JavaScript, and modern
+          responsive configuration layouts. I enjoy sculpting structural assets into beautiful, functional, and
+          layout-driven products.
+        </p>
+        <p class="text-secondary mb-4">
+          I am continuously testing new framework technologies and optimizing code standards to design progressive
+          digital platforms. My focus elements always prioritize clear execution metrics and multi-device usability.
+        </p>
+        <div class="row mt-4 g-3 bg-white p-3 rounded-3 shadow-sm mx-1">
+          <div class="col-sm-6">
+            <p class="mb-2"><strong>Name:</strong> Pranali</p>
+            <p class="mb-0"><strong>Role:</strong> Web Developer</p>
+          </div>
+          <div class="col-sm-6">
+            <p class="mb-2"><strong>Email:</strong> pranalishinde020@email.com</p>
+            <p class="mb-0"><strong>Location:</strong> Maharashtra, India</p>
+          </div>
+        </div>
+        <a href="#contact" class="btn btn-gradient mt-4 px-4 py-2 shadow-sm">Contact Me</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="container py-5">
+    <div class="text-center mb-4">
+      <h2 class="fw-bold text-uppercase tracking-wide" style="letter-spacing: 2px;">My Skills</h2>
+      <div class="section-title-line"></div>
+    </div>
+    <div class="row g-4 text-center justify-content-center">
+      <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="card border-0 shadow-sm h-100 skill-card bg-white">
+          <div class="card-body p-4 d-flex flex-column align-items-center justify-content-center">
+            <div class="icon-box mb-3 d-flex align-items-center justify-content-center rounded-circle"
+              style="width: 80px; height: 80px; background: rgba(220, 53, 69, 0.08);">
+              <i class="bi bi-filetype-html text-danger display-5"></i>
+            </div>
+            <h6 class="fw-bold m-0">HTML5</h6>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="card border-0 shadow-sm h-100 skill-card bg-white">
+          <div class="card-body p-4 d-flex flex-column align-items-center justify-content-center">
+            <div class="icon-box mb-3 d-flex align-items-center justify-content-center rounded-circle"
+              style="width: 80px; height: 80px; background: rgba(13, 110, 253, 0.08);">
+              <i class="bi bi-filetype-css text-primary display-5"></i>
+            </div>
+            <h6 class="fw-bold m-0">CSS3</h6>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="card border-0 shadow-sm h-100 skill-card bg-white">
+          <div class="card-body p-4 d-flex flex-column align-items-center justify-content-center">
+            <div class="icon-box mb-3 d-flex align-items-center justify-content-center rounded-circle"
+              style="width: 80px; height: 80px; background: rgba(121, 82, 179, 0.08);">
+              <i class="bi bi-bootstrap-fill display-5" style="color: #7952b3;"></i>
+            </div>
+            <h6 class="fw-bold m-0">Bootstrap 5</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section id="education" class="container py-5">
+    <h2 class="text-center fw-bold text-dark mb-2">Education</h2>
+    <div class="section-title-line"></div>
+    <div class="row justify-content-center">
+      <div class="col-md-9 col-lg-8">
+        <div class="position-relative ps-4 border-start border-2 border-secondary-subtle ms-3">
+
+          <!-- Box 1 -->
+          <div class="mb-5 position-relative">
+            <div
+              class="position-absolute translate-middle-x d-flex align-items-center justify-content-center rounded-circle text-white shadow-sm"
+              style="width: 40px; height: 40px; left: -25px; top: 0; background: var(--primary-gradient); font-size: 1rem;">
+              🎓
+            </div>
+            <div class="card border-0 shadow-sm rounded-4 p-4 bg-white ms-2">
+              <span class="badge bg-dark text-white fw-semibold mb-2 align-self-start px-3 py-1.5 rounded-pill">2024 -
+                2027</span>
+              <h5 class="fw-bold mb-1 text-dark">Diploma in Engineering</h5>
+              <p class="text-muted mb-0 fw-medium text-uppercase small" style="letter-spacing: 0.5px;">
+                Shivaji Polytechnic College, Sangola
+              </p>
+            </div>
+          </div>
+
+          <!-- Box 2 -->
+          <div class="mb-3 position-relative">
+            <div
+              class="position-absolute translate-middle-x d-flex align-items-center justify-content-center rounded-circle text-white shadow-sm"
+              style="width: 40px; height: 40px; left: -25px; top: 0; background: var(--primary-gradient); font-size: 1rem;">
+              🏫
+            </div>
+            <div class="card border-0 shadow-sm rounded-4 p-4 bg-white ms-2">
+              <span class="badge bg-dark text-white fw-semibold mb-2 align-self-start px-3 py-1.5 rounded-pill">2023 -
+                2024</span>
+              <h5 class="fw-bold mb-1 text-dark">SSC Secondary Education</h5>
+              <p class="text-muted mb-0 fw-medium text-uppercase small" style="letter-spacing: 0.5px;">
+                Shree Shidhanath School, Walekhindi
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="container py-5">
+    <h2 class="text-center fw-bold">Projects</h2>
+    <div class="section-title-line"></div>
+    <div class="row g-4">
+      <!-- Project Card 1 -->
+      <div class="col-md-4">
+        <div class="glass-card shadow-sm h-100 d-flex flex-column bg-white">
+          <div class="project-top border-bottom border-light">
+            <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+          </div>
+          <div class="project-body p-4 flex-grow-1 d-flex flex-column justify-content-between">
+            <div>
+              <h5 class="fw-bold mb-2 text-capitalize">Our Department</h5>
+              <p class="text-secondary small">Designed an interactive web portal focusing on college academic
+                departments structure, layout workflows, and information hubs.</p>
+            </div>
+            <a href="deparment.html" class="btn btn-outline-primary btn-sm mt-4 w-100 rounded-2">Explore Code</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project Card 2 -->
+      <div class="col-md-4">
+        <div class="glass-card shadow-sm h-100 d-flex flex-column bg-white">
+          <div class="project-top border-bottom border-light">
+            <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+          </div>
+          <div class="project-body p-4 flex-grow-1 d-flex flex-column justify-content-between">
+            <div>
+              <h5 class="fw-bold mb-2 text-capitalize">Registration Form</h5>
+              <p class="text-secondary small">A fully responsive, user interface dynamic system powered with
+                comprehensive Bootstrap utilities validation.</p>
+            </div>
+            <a href="registation form.html" class="btn btn-outline-primary btn-sm mt-4 w-100 rounded-2">Explore Code</a>
+          </div>
+        </div>
+      </div>
+      <!-- Project Card 3 -->
+      <div class="col-md-4">
+        <div class="glass-card shadow-sm h-100 d-flex flex-column bg-white">
+          <div class="project-top border-bottom border-light">
+            <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+          </div>
+          <div class="project-body p-4 flex-grow-1 d-flex flex-column justify-content-between">
+            <div>
+              <h5 class="fw-bold mb-2 text-capitalize">Calculator App</h5>
+              <p class="text-secondary small">A highly interactive and fluid operational matrix device built natively
+                using clean vanilla JavaScript logic algorithms.</p>
+            </div>
+            <a href="CALCULATOR.HTML" class="btn btn-outline-primary btn-sm mt-4 w-100 rounded-2">Explore Code</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications Section -->
+  <section id="certification" class="container py-5">
+    <h2 class="text-center fw-bold">Certifications</h2>
+    <div class="section-title-line"></div>
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <ul class="list-group shadow-sm rounded-4 border-0">
+          <li class="list-group-item d-flex align-items-center p-3 border-light"><i
+              class="bi bi-patch-check-fill text-success me-3 fs-5"></i> Web Development Frameworks - Coursera</li>
+          <li class="list-group-item d-flex align-items-center p-3 border-light"><i
+              class="bi bi-patch-check-fill text-success me-3 fs-5"></i> Bootstrap 5 Masterclass Component Modules -
+            Udemy</li>
+          <li class="list-group-item d-flex align-items-center p-3 border-light"><i
+              class="bi bi-patch-check-fill text-success me-3 fs-5"></i> JavaScript Developer Fundamentals -
+            FreeCodeCamp</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Expertise Section -->
+  <section id="expertise" class="container py-5">
+    <h2 class="text-center fw-bold">Technical Expertise</h2>
+    <div class="section-title-line"></div>
+    <div class="row justify-content-center">
+      <div class="col-md-8 bg-white p-4 rounded-4 shadow-sm">
+        <p class="mb-1 fw-semibold">HTML5</p>
+        <div class="progress mb-3 shadow-inner" style="height: 16px; border-radius: 8px;">
+          <div class="progress-bar bg-danger fw-bold rounded-5" style="width:90%; font-size: 0.75rem;">90%</div>
+        </div>
+        <p class="mb-1 fw-semibold">CSS3</p>
+        <div class="progress mb-3 shadow-inner" style="height: 16px; border-radius: 8px;">
+          <div class="progress-bar bg-primary fw-bold rounded-5" style="width:85%; font-size: 0.75rem;">85%</div>
+        </div>
+        <p class="mb-1 fw-semibold">Bootstrap Framework</p>
+        <div class="progress mb-2 shadow-inner" style="height: 16px; border-radius: 8px;">
+          <div class="progress-bar bg-success fw-bold rounded-5" style="width:80%; font-size: 0.75rem;">80%</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Achievements Section -->
+  <section id="achievement" class="container py-5">
+    <h2 class="text-center fw-bold">Achievements</h2>
+    <div class="section-title-line"></div>
+    <div class="row text-center g-4">
+      <div class="col-md-4">
+        <div class="p-4 bg-white shadow-sm border-0 rounded-4 card-item-hover">
+          <h3 class="display-5 fw-bold text-gradient">10+</h3>
+          <p class="text-secondary fw-semibold mb-0">Projects Completed</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="p-4 bg-white shadow-sm border-0 rounded-4 card-item-hover">
+          <h3 class="display-5 fw-bold text-gradient">5+</h3>
+          <p class="text-secondary fw-semibold mb-0">Certifications</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="p-4 bg-white shadow-sm border-0 rounded-4 card-item-hover">
+          <h3 class="display-5 fw-bold text-gradient">100%</h3>
+          <p class="text-secondary fw-semibold mb-0">Learning Progress</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Resume Section -->
+  <section id="resume" class="container py-5">
+    <h2 class="text-center fw-bold">Resume</h2>
+    <div class="section-title-line"></div>
+    <div class="resume-card">
+      <div class="resume-header">
+        <h2 class="fw-bold">Pranali Tanaji Shinde</h2>
+        <p class="text-white-50 fs-5 mb-3">Frontend Developer | Web Designer | Programmer</p>
+        <p class="m-0 small">
+          <i class="bi bi-envelope-fill me-1"></i> pranalishinde020@gmail.com |
+          <i class="bi bi-telephone-fill me-1"></i> +91 92702 12055 |
+          <i class="bi bi-geo-alt-fill me-1"></i> Sangli, Maharashtra
+        </p>
+      </div>
+      <div class="p-4 p-md-5">
+        <div class="row g-4">
+          <div class="col-md-4 border-end border-light">
+            <h5 class="section-title">Skills</h5>
+            <div class="d-flex flex-wrap mb-4">
+              <span class="skill-badge">HTML</span>
+              <span class="skill-badge">CSS</span>
+              <span class="skill-badge">Bootstrap</span>
+              <span class="skill-badge">JavaScript</span>
+            </div>
+            <hr class="text-muted">
+            <h5 class="section-title">Education</h5>
+            <p class="mb-3">
+              <strong class="text-dark">Diploma</strong><br>
+              <span class="text-muted small text-uppercase">Shivaji Polytechnic College Sangola</span><br>
+              <small class="text-secondary">2024 - 2027</small>
+            </p>
+            <p>
+              <strong class="text-dark">SSC</strong><br>
+              <span class="text-muted small text-uppercase">Shree Shidhanath School Walekhindi</span><br>
+              <small class="text-secondary">2023 - 2024</small>
+            </p>
+          </div>
+          <div class="col-md-8 ps-md-4">
+            <h5 class="section-title">About Me</h5>
+            <p class="text-secondary leading-relaxed">
+              I am a frontend developer who loves constructing structured digital design modules. Processing modern
+              layout parameters using responsive Bootstrap rules to render clean outputs is my primary workspace
+              objective.
+            </p>
+            <h5 class="section-title mt-4">Projects</h5>
+            <ul class="text-secondary ps-3">
+              <li class="mb-2"><strong>Portfolio Website</strong> – Responsive personal layout design deploying modular
+                components frameworks.</li>
+              <li class="mb-2"><strong>Landing Page</strong> – Optimized product showcasing modules configured
+                dynamically for viewport scaling.</li>
+              <li><strong>Calculator App</strong> – Clean mathematical operational engine built natively upon structural
+                algorithms.</li>
+            </ul>
+            <h5 class="section-title mt-4">Experience</h5>
+            <p class="text-secondary mb-0">
+              <strong>Fresher</strong><br>
+              Actively coding platform interfaces, checking rendering breakpoints, and designing custom portfolio
+              repositories.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="container py-5">
+    <h2 class="text-center fw-bold">Contact Me</h2>
+    <div class="section-title-line"></div>
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card border-0 shadow-lg p-4 rounded-4 bg-white">
+          <form id="contactForm">
+            <div class="mb-3">
+              <input type="text" id="name" class="form-control p-3 bg-light border-0" placeholder="Your Name" required>
+            </div>
+            <div class="mb-3">
+              <input type="email" id="email" class="form-control p-3 bg-light border-0" placeholder="Your Email"
+                required>
+            </div>
+            <div class="mb-3">
+              <textarea id="message" class="form-control p-3 bg-light border-0" rows="4" placeholder="Message"
+                required></textarea>
+            </div>
+            <div class="mb-4 bg-light p-3 rounded-3 d-flex align-items-center justify-content-between border">
+              <label class="m-0 fw-semibold text-muted">
+                What is <span id="num1" class="text-primary fw-bold"></span> + <span id="num2"
+                  class="text-primary fw-bold"></span> ?
+              </label>
+              <input type="number" id="captcha" class="form-control w-25 border-secondary-subtle" placeholder="Answer"
+                required>
+            </div>
+            <button type="submit" class="btn btn-gradient w-100 p-3 fw-bold rounded-3">
+              Send on WhatsApp <i class="bi bi-send-fill ms-2"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-light pt-5 pb-4 mt-5">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <h5 class="fw-bold mb-3 text-gradient">Pranali T. Shinde</h5>
+          <p class="text-white-50 small">
+            Frontend Web Developer dedicated to transforming structured code modules into highly functional, digital
+            interactive platforms.
+          </p>
+        </div>
+        <div class="col-md-4">
+          <h5 class="fw-bold mb-3 text-light">Navigation</h5>
+          <ul class="footer-links row m-0 p-0 row-cols-2">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#resume">Resume</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h5 class="fw-bold mb-3 text-light">Social Channels</h5>
+          <div class="social-icons mb-3">
+            <a href="#" class="text-white-50"><i class="bi bi-github"></i></a>
+            <a href="#" class="text-white-50"><i class="bi bi-linkedin"></i></a>
+            <a href="#" class="text-white-50"><i class="bi bi-instagram"></i></a>
+            <a href="mailto:pranalishinde020@gmail.com" class="text-white-50"><i class="bi bi-envelope-fill"></i></a>
+          </div>
+          <p class="text-white-50 small mb-0">Email: pranalishinde020@gmail.com</p>
+        </div>
+      </div>
+      <hr class="my-4 border-secondary">
+      <div class="text-center text-white-50 small">
+        © 2026 Pranali Shinde. Designed via Bootstrap 5 Framework guidelines.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Utilities and Floating Actions -->
+  <div>
+    <button id="topBtn" class="btn btn-primary position-fixed bottom-0 end-0 m-3 rounded-circle shadow-lg"
+      style="width: 48px; height: 48px; z-index: 1000; display: none; background: #8a2387; border: none;">
+      ↑
+    </button>
+    <a href="https://wa.me/919270212055" target="_blank"
+      class="btn btn-success position-fixed bottom-0 start-0 m-3 rounded-circle shadow-lg whatsapp-float">
+      <i class="bi bi-whatsapp"></i>
+    </a>
+  </div>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Google Translate Integration Scripts -->
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'en,hi,mr', // Filtered for English, Hindi, and Marathi
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      }, 'google_translate_element');
+    }
+  </script>
+  <script type="text/javascript"
+    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+  <!-- Interactive Logic Script -->
+  <script>
+    // Generator for Captcha Equation
+    let a = Math.floor(Math.random() * 10) + 1;
+    let b = Math.floor(Math.random() * 10) + 1;
+
+    document.getElementById("num1").textContent = a;
+    document.getElementById("num2").textContent = b;
+
+    document.getElementById("contactForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      let captcha = parseInt(document.getElementById("captcha").value);
+
+      if (captcha !== a + b) {
+        alert("Captcha configuration verification incorrect. Please try again.");
+        return;
+      }
+
+      let name = document.getElementById("name").value;
+      let email = document.getElementById("email").value;
+      let message = document.getElementById("message").value;
+
+      let whatsappMessage = `*New Contact Form Message*\nName: ${name}\nEmail: ${email}\nMessage: ${message}`;
+      let whatsappURL = `https://wa.me/919270212055?text=${encodeURIComponent(whatsappMessage)}`;
+
+      window.open(whatsappURL, "_blank");
+    });
+
+    // Scroll back to top behavior
+    const btn = document.getElementById('topBtn');
+    window.onscroll = () => {
+      btn.style.display = window.scrollY > 200 ? 'block' : 'none';
+    };
+    btn.onclick = () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+  </script>
+</body>
+
+</html>

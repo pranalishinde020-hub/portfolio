@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            background-color: rgb(15, 15, 15);
+            border-radius: 10px;
+        }
+
+        .arthma {
+            background-color: brown;
+            color: azure
+        }
+
+        button {
+            width: 100%;
+        }
+
+        input {
+            text-align: right;
+        }
+
+        equal {
+            background-color: rgb(157, 83, 59);
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="d-flex justify-content-between align-items-center border-bottom pb-3 mb-4">
+      <h2 class="mb-0 fw-bold">Departments</h2>
+      <a href="index.html" class="btn btn-outline-secondary btn-sm rounded-2 d-inline-flex align-items-center gap-2">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"/>
+        </svg>
+    <i class="bi bi-arrow-left-square-fill"></i>
+      </a>
+    </div>
+    <center>
+        <h1> calculator</h1>
+        <div>
+            <table cellpadding="3" cellpacing="3">
+
+
+                <tr>
+                    <td colspan="4">
+                        <input type="text" name="" id="display" placeholder="" readonly>
+                    </td>
+                </tr>
+
+                <tr>
+
+                    <td><button onclick="append('7')">7</button> </td>
+                    <td> <button onclick="append('8')">8</button> </td>
+                    <td> <button onclick="append('9')">9</button> </td>
+                    <td> <button class="arthma" onclick="append('/')">/</button> </td>
+                </tr>
+                <tr>
+                    <td> <button onclick="append('4')">4</button></td>
+                    <td><button onclick="append('5')">5</button></td>
+                    <td><button onclick="append('6')">6</button></td>
+                    <td><button class="arthma" onclick="append('*')">*</button></td>
+                </tr>
+                <tr>
+                    <td><button onclick="append('1')">1</button></td>
+                    <td><button onclick="append('2')">2</button></td>
+                    <td><button onclick="append('3')">3</button></td>
+                    <td><button class="arthma" onclick="append('-')">-</button></td>
+                </tr>
+                <tr>
+                    <td><button onclick="append('.')">.</button></td>
+                    <td><button onclick="append('0')">0</button></td>
+                    <td> <button class="arthma" onclick="append('+')">+</button></td>
+                    <td><button onclick="clear_display()">C</button></td>
+                </tr>
+                <tr>
+                    <th colspan="5"><button id="equal" onclick="calculate()">=</button> </th>
+
+                </tr>
+
+
+            </table>
+        </div>
+    </center>
+    <script>
+        function append(value) {
+            var append =
+                document.getElementById("display").value += value;
+        }
+        function calculate() {
+            var expression = document.getElementById("display").value;
+            document.getElementById("display").value = eval(expression);
+        }
+        function clear_display() {
+            document.getElementById("display").value = "";
+        }
+    </script>
+   
+</body>
+
+</html>
