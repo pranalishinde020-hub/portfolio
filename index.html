@@ -421,141 +421,145 @@
     .social-icons a:hover {
       color: #ff416c !important;
     }
+
     /* --- Navbar Base & Transition --- */
-.custom-navbar {
-  transition: all 0.4s ease-in-out;
-}
+    .custom-navbar {
+      transition: all 0.4s ease-in-out;
+    }
 
-/* --- Animated Hover Underline for Links --- */
-.nav-link-grow {
-  position: relative;
-  transition: color 0.3s ease;
-}
+    /* --- Animated Hover Underline for Links --- */
+    .nav-link-grow {
+      position: relative;
+      transition: color 0.3s ease;
+    }
 
-.nav-link-grow::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
-  bottom: 2px;
-  left: 50%;
-  background-color: #0d6efd; /* You can change this to match your accent color */
-  transition: all 0.3s ease-in-out;
-  transform: translateX(-50%);
-}
+    .nav-link-grow::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 2px;
+      left: 50%;
+      background-color: #0d6efd;
+      /* You can change this to match your accent color */
+      transition: all 0.3s ease-in-out;
+      transform: translateX(-50%);
+    }
 
-.nav-link-grow:hover::after,
-.nav-link-grow.active::after {
-  width: 80%;
-}
+    .nav-link-grow:hover::after,
+    .nav-link-grow.active::after {
+      width: 80%;
+    }
 
-/* --- Brand Logo Hover Pop --- */
-.brand-logo {
-  transition: transform 0.3s ease;
-}
-.navbar-brand:hover .brand-logo {
-  transform: scale(1.1) rotate(5deg);
-}
+    /* --- Brand Logo Hover Pop --- */
+    .brand-logo {
+      transition: transform 0.3s ease;
+    }
 
-/* --- Smooth Mobile Menu Collapse Slide --- */
-@media (max-width: 991.98px) {
-  .navbar-collapse {
-    opacity: 0;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease-in-out, opacity 0.3s ease-in-out;
-  }
+    .navbar-brand:hover .brand-logo {
+      transform: scale(1.1) rotate(5deg);
+    }
 
-  .navbar-collapse.show {
-    opacity: 1;
-    max-height: 500px; /* Adjust based on total height of links */
-  }
-}
+    /* --- Smooth Mobile Menu Collapse Slide --- */
+    @media (max-width: 991.98px) {
+      .navbar-collapse {
+        opacity: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-in-out, opacity 0.3s ease-in-out;
+      }
+
+      .navbar-collapse.show {
+        opacity: 1;
+        max-height: 500px;
+        /* Adjust based on total height of links */
+      }
+    }
   </style>
 </head>
 
 <body>
 
-  <!-- Navigation Bar -->
+
   <!-- Navigation Bar -->
   <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top shadow-sm py-3 custom-navbar">
-  <div class="container-fluid px-lg-5">
-    <a class="navbar-brand d-flex align-items-center" href="#home">
-      <img src="IMAGE/PANUU LOGO.webp" alt="Logo" style="width:40px; height:40px;" class="rounded-pill bg-light me-2 brand-logo"
-        onerror="this.src='https://picsum.photos/40'">
-      <span class="fw-bold tracking-wider fs-6">PRANALI SHINDE</span>
-    </a>
-    <button class="navbar-toggler border-0 collapsible-toggler" type="button" data-bs-toggle="collapse"
-      data-bs-target="#collapsibleNavbar">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
-      <ul class="navbar-nav gap-1 text-center mt-3 mt-lg-0 align-items-center">
-        <li class="nav-item">
-          <a class="nav-link nav-link-grow px-3" data-bs-dismiss="collapse" href="#home">
-            <i class="bi bi-house-door-fill me-1"></i> HOME
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link nav-link-grow px-3" data-bs-dismiss="collapse" href="#about">
-            <i class="bi bi-person-badge-fill me-1"></i> ABOUT
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link nav-link-grow px-3" data-bs-dismiss="collapse" href="#skills">
-            <i class="bi bi-cpu-fill me-1"></i> SKILLS
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link nav-link-grow px-3" data-bs-dismiss="collapse" href="#education">
-            <i class="bi bi-mortarboard-fill me-1"></i> EDUCATION
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link nav-link-grow px-3" data-bs-dismiss="collapse" href="#projects">
-            <i class="bi bi-code-square me-1"></i> PROJECTS
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link nav-link-grow px-3" data-bs-dismiss="collapse" href="#certification">
-            <i class="bi bi-patch-check-fill me-1"></i> CERTIFICATIONS
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link nav-link-grow px-3" data-bs-dismiss="collapse" href="#achievement">
-            <i class="bi bi-trophy-fill me-1"></i> ACHIEVEMENTS
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link nav-link-grow px-3" data-bs-dismiss="collapse" href="#resume">
-            <i class="bi bi-file-earmark-person-fill me-1"></i> RESUME
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link nav-link-grow px-3" data-bs-dismiss="collapse" href="#contact">
-            <i class="bi bi-envelope-fill me-1"></i> CONTACT
-          </a>
-        </li>
-        <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
-          <div id="google_translate_element"></div>
-        </li>
-      </ul>
+    <div class="container-fluid px-lg-5">
+      <a class="navbar-brand d-flex align-items-center" href="#home">
+        <img src="IMAGE/PANUU LOGO.webp" alt="Logo" style="width:40px; height:40px;"
+          class="rounded-pill bg-light me-2 brand-logo" onerror="this.src='https://picsum.photos/40'">
+        <span class="fw-bold tracking-wider fs-6">PRANALI SHINDE</span>
+      </a>
+      <button class="navbar-toggler border-0 collapsible-toggler" type="button" data-bs-toggle="collapse"
+        data-bs-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
+        <ul class="navbar-nav gap-1 text-center mt-3 mt-lg-0 align-items-center">
+          <li class="nav-item">
+            <a class="nav-link nav-link-grow px-3" href="#home">
+              <i class="bi bi-house-door-fill me-1"></i> HOME
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-grow px-3" href="#about">
+              <i class="bi bi-person-badge-fill me-1"></i> ABOUT
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-grow px-3" href="#skills">
+              <i class="bi bi-cpu-fill me-1"></i> SKILLS
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-grow px-3" href="#education">
+              <i class="bi bi-mortarboard-fill me-1"></i> EDUCATION
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-grow px-3" href="#projects">
+              <i class="bi bi-code-square me-1"></i> PROJECTS
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-grow px-3" href="#certification">
+              <i class="bi bi-patch-check-fill me-1"></i> CERTIFICATIONS
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-grow px-3" href="#achievement">
+              <i class="bi bi-trophy-fill me-1"></i> ACHIEVEMENTS
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-grow px-3" href="#resume">
+              <i class="bi bi-file-earmark-person-fill me-1"></i> RESUME
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link nav-link-grow px-3" href="#contact">
+              <i class="bi bi-envelope-fill me-1"></i> CONTACT
+            </a>
+          </li>
+          <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+            <div id="google_translate_element"></div>
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
-</nav>
-<script>
+  </nav>
+  <script>
 
-  window.addEventListener('scroll', function () {
-  const navbar = document.querySelector('.custom-navbar');
-  if (window.scrollY > 50) {
-    navbar.classList.remove('py-3');
-    navbar.classList.add('py-2', 'bg-opacity-95'); // Shrinks padding and adds subtle transparency
-  } else {
-    navbar.classList.remove('py-2', 'bg-opacity-95');
-    navbar.classList.add('py-3');
-  }
-});
-</script>
+    window.addEventListener('scroll', function () {
+      const navbar = document.querySelector('.custom-navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.remove('py-3');
+        navbar.classList.add('py-2', 'bg-opacity-95'); // Shrinks padding and adds subtle transparency
+      } else {
+        navbar.classList.remove('py-2', 'bg-opacity-95');
+        navbar.classList.add('py-3');
+      }
+    });
+  </script>
 
   <!-- Context Headline Banner -->
   <div class="container mt-4 pt-2">
@@ -592,7 +596,7 @@
         </div>
 
         <div class="col-lg-6 order-1 order-lg-2 animate__animated animate__fadeInRight text-center">
-          <img src="IMAGE/pranali.jpg" alt="" width="400" height="500">
+          <img src="IMAGE/pranali.jpg" alt="" width="350" height="400">
         </div>
       </div>
     </div>
@@ -802,6 +806,7 @@
   </section>
 
   <!-- Technical Expertise Section -->
+
   <section id="expertise" class="container py-5">
     <h2 class="text-center fw-bold">Technical Expertise</h2>
     <div class="section-title-line"></div>
@@ -1055,6 +1060,30 @@
     btn.onclick = () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     };
+  </script>
+  <script>
+    document.querySelectorAll('.nav-link-grow').forEach(link => {
+      link.addEventListener('click', function (e) {
+       
+        const targetId = this.getAttribute('href');
+        const targetSection = document.querySelector(targetId);
+        const menuToggle = document.getElementById('collapsibleNavbar');
+
+        if (targetSection) {
+          e.preventDefault(); 
+
+         
+          targetSection.scrollIntoView({ behavior: 'smooth' });
+
+          setTimeout(() => {
+            if (menuToggle.classList.contains('show')) {
+              const bsCollapse = bootstrap.Collapse.getOrCreateInstance(menuToggle);
+              bsCollapse.hide();
+            }
+          }, 400);
+        }
+      });
+    });
   </script>
 </body>
 
