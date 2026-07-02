@@ -602,41 +602,79 @@
     </div>
   </section>
 
-  <!-- About Section -->
-  <section id="about" class="container py-5">
-    <h2 class="text-center fw-bold">About Me</h2>
-    <div class="section-title-line"></div>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+<section id="about" class="container py-5">
+
+    <h2 class="text-center fw-bold display-5" data-aos="fade-down">
+        About Me
+    </h2>
+
+    <div class="section-title-line mx-auto mb-5"></div>
+
     <div class="row align-items-center g-5">
-      <div class="col-md-4 text-center">
-        <img src="IMAGE/about.jpg" alt="Pranali Profile"
-          class="img-fluid rounded-circle shadow-lg border border-4 border-white"
-          style="width: 280px; height: 280px; object-fit: cover;" onerror="this.src='https://picsum.photos/280'">
-      </div>
-      <div class="col-md-8">
-        <h3 class="fw-bold mb-3 text-dark">Hello, I'm Pranali</h3>
-        <p class="text-secondary mb-3">
-          I am a passionate Web Developer with core knowledge of HTML5, CSS3, Bootstrap 5, JavaScript, and modern
-          responsive configuration layouts. I enjoy sculpting structural assets into beautiful, functional, and
-          layout-driven products.
-        </p>
-        <p class="text-secondary mb-4">
-          I am continuously testing new framework technologies and optimizing code standards to design progressive
-          digital platforms. My focus elements always prioritize clear execution metrics and multi-device usability.
-        </p>
-        <div class="row mt-4 g-3 bg-white p-3 rounded-3 shadow-sm mx-1">
-          <div class="col-sm-6">
-            <p class="mb-2"><strong>Name:</strong> Pranali</p>
-            <p class="mb-0"><strong>Role:</strong> Web Developer</p>
-          </div>
-          <div class="col-sm-6">
-            <p class="mb-2"><strong>Email:</strong> pranalishinde020@email.com</p>
-            <p class="mb-0"><strong>Location:</strong> Maharashtra, India</p>
-          </div>
+
+        <!-- Image -->
+        <div class="col-md-4 text-center" data-aos="zoom-in">
+
+            <div class="profile-wrapper">
+
+                <img src="IMAGE/about.jpg"
+                    alt="Pranali Profile"
+                    class="profile-img rounded-circle"
+                    onerror="this.src='https://picsum.photos/280'" width="300 ">
+
+            </div>
+
         </div>
-        <a href="#contact" class="btn btn-gradient mt-4 px-4 py-2 shadow-sm">Contact Me</a>
-      </div>
+
+        <!-- Content -->
+        <div class="col-md-8" data-aos="fade-left">
+
+            <div class="about-card">
+
+                <h3 class="fw-bold mb-3">
+                    Hello, I'm <span class="text-gradient">Pranali</span>
+                </h3>
+
+                <p>
+                    I am a passionate Web Developer with core knowledge of
+                    HTML5, CSS3, Bootstrap 5, JavaScript, and modern responsive
+                    layouts. I enjoy transforming ideas into beautiful,
+                    user-friendly, and responsive websites.
+                </p>
+
+                <p>
+                    I continuously explore new technologies and improve coding
+                    standards to build modern digital experiences with clean UI
+                    and smooth performance.
+                </p>
+
+                <div class="row info-box mt-4">
+
+                    <div class="col-sm-6">
+                        <p><strong>Name :</strong> Pranali</p>
+                        <p><strong>Role :</strong> Web Developer</p>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <p><strong>Email :</strong> pranalishinde020@email.com</p>
+                        <p><strong>Location :</strong> Maharashtra, India</p>
+                    </div>
+
+                </div>
+
+                <a href="#contact" class="btn btn-gradient mt-4">
+                    Contact Me
+                </a>
+
+            </div>
+
+        </div>
+
     </div>
-  </section>
+
+</section>
 
   <!-- Skills Section -->
   <section id="skills" class="container py-5">
