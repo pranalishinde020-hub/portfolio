@@ -21,9 +21,9 @@
       /* Premium multi-layered mesh background design */
       background: radial-gradient(at 0% 0%, #dadada 0px, transparent 50%),
         radial-gradient(at 100% 0%, #ffffff 0px, transparent 50%),
-        radial-gradient(at 100% 100%, #a07b8c 0px, transparent 50%),
+        radial-gradient(at 100% 100%, #944e6f 0px, transparent 50%),
         radial-gradient(at 0% 100%, #882647 0px, transparent 50%);
-      background-color: linear-gradient(rgb(85, 38, 60), white);
+      background-color: linear-gradient(rgb(175, 72, 112), white);
       background-attachment: fixed;
       color: #d65454;
       padding-top: 80px;
@@ -262,7 +262,7 @@
     /* Gradients & Buttons */
     .text-gradient {
       background: var(--primary-gradient);
-      -webkit-background-clip: text;
+      background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
@@ -602,96 +602,95 @@
     </div>
   </section>
 
- <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <!-- About Section -->
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
-<section id="about" class="container py-5">
+  <section id="about" class="container py-5">
 
     <h2 class="text-center fw-bold display-5" data-aos="fade-down">
-        About Me
+      About Me
     </h2>
 
     <div class="section-title-line mx-auto mb-5"></div>
 
     <div class="row align-items-center g-5">
 
-        <!-- Image -->
-        <div class="col-md-4 text-center" data-aos="zoom-in">
+      <!-- Image -->
+      <div class="col-md-4 text-center" data-aos="zoom-in">
 
-            <div class="profile-wrapper">
+        <div class="profile-wrapper">
 
-                <img src="IMAGE/about.jpg"
-                    alt="Pranali Profile"
-                    class="profile-img rounded-circle"
-                    onerror="this.src='https://picsum.photos/280'" width="300 ">
-
-            </div>
+          <img src="IMAGE/about.jpg" alt="Pranali Profile" class="profile-img rounded-circle"
+            onerror="this.src='https://picsum.photos/280'" width="300 ">
 
         </div>
 
-        <!-- Content -->
-        <div class="col-md-8" data-aos="fade-left">
+      </div>
 
-            <div class="about-card">
+      <!-- Content -->
+      <div class="col-md-8" data-aos="fade-left">
 
-                <h3 class="fw-bold mb-3">
-                    Hello, I'm <span class="text-gradient">Pranali</span>
-                </h3>
+        <div class="about-card">
 
-                <p>
-                    I am a passionate Web Developer with core knowledge of
-                    HTML5, CSS3, Bootstrap 5, JavaScript, and modern responsive
-                    layouts. I enjoy transforming ideas into beautiful,
-                    user-friendly, and responsive websites.
-                </p>
+          <h3 class="fw-bold mb-3">
+            Hello, I'm <span class="text-gradient">Pranali</span>
+          </h3>
 
-                <p>
-                    I continuously explore new technologies and improve coding
-                    standards to build modern digital experiences with clean UI
-                    and smooth performance.
-                </p>
+          <p>
+            I am a passionate Web Developer with core knowledge of
+            HTML5, CSS3, Bootstrap 5, JavaScript, and modern responsive
+            layouts. I enjoy transforming ideas into beautiful,
+            user-friendly, and responsive websites.
+          </p>
 
-                <div class="row info-box mt-4">
+          <p>
+            I continuously explore new technologies and improve coding
+            standards to build modern digital experiences with clean UI
+            and smooth performance.
+          </p>
 
-                    <div class="col-sm-6">
-                        <p><strong>Name :</strong> Pranali</p>
-                        <p><strong>Role :</strong> Web Developer</p>
-                    </div>
+          <div class="row info-box mt-4">
 
-                    <div class="col-sm-6">
-                        <p><strong>Email :</strong> pranalishinde020@email.com</p>
-                        <p><strong>Location :</strong> Maharashtra, India</p>
-                    </div>
-
-                </div>
-
-                <a href="#contact" class="btn btn-gradient mt-4">
-                    Contact Me
-                </a>
-
+            <div class="col-sm-6">
+              <p><strong>Name :</strong> Pranali</p>
+              <p><strong>Role :</strong> Web Developer</p>
             </div>
 
+            <div class="col-sm-6">
+              <p><strong>Email :</strong> pranalishinde020@email.com</p>
+              <p><strong>Location :</strong> Maharashtra, India</p>
+            </div>
+
+          </div>
+
+          <a href="#contact" class="btn btn-gradient mt-4">
+            Contact Me
+          </a>
+
         </div>
+
+      </div>
 
     </div>
 
-</section>
+  </section>
 
-<!-- AOS JS -->
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 
-<script>
-AOS.init({
-    duration:1000,
-    once:true
-});
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
 
-</script>
-
+  </script>
 
   <!-- Skills Section -->
   <section id="skills" class="container py-5">
     <div class="text-center mb-4">
-      <h2 class="fw-bold text-uppercase tracking-wide" style="letter-spacing: 2px;">My Skills</h2>
+      <h2 class="fw-bold text-uppercase tracking-wide" style="letter-spacing: 2px;" data-aos="fade-down">My Skills</h2>
       <div class="section-title-line"></div>
     </div>
     <div class="row g-4 text-center justify-content-center">
@@ -728,12 +727,34 @@ AOS.init({
           </div>
         </div>
       </div>
+      <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="card border-0 shadow-sm h-100 skill-card bg-white">
+          <div class="card-body p-4 d-flex flex-column align-items-center justify-content-center">
+            <div class="icon-box mb-3 d-flex align-items-center justify-content-center rounded-circle"
+              style="width: 80px; height: 80px; background: rgba(247, 223, 30, 0.15);">
+              <i class="bi bi-filetype-js display-5" style="color:#f7df1e;"></i>
+            </div>
+            <h6 class="fw-bold m-0">JavaScript</h6>
+          </div>
+        </div>
+      </div>
+<div class="col-lg-3 col-md-4 col-sm-6">
+  <div class="card border-0 shadow-sm h-100 skill-card bg-white">
+    <div class="card-body p-4 d-flex flex-column align-items-center justify-content-center">
+      <div class="icon-box mb-3 d-flex align-items-center justify-content-center rounded-circle"
+        style="width: 80px; height: 80px; background: rgba(55,118,171,.12);">
+        <i class="bi bi-filetype-py display-5" style="color:#3776AB;"></i>
+      </div>
+      <h6 class="fw-bold m-0">Python</h6>
+    </div>
+  </div>
+</div>
     </div>
   </section>
 
   <!-- Education Section -->
   <section id="education" class="container py-5">
-    <h2 class="text-center fw-bold text-dark mb-2">Education</h2>
+    <h2 class="text-center fw-bold text-dark mb-2" data-aos="fade-down">Education</h2>
     <div class="section-title-line"></div>
     <div class="row justify-content-center">
       <div class="col-md-9 col-lg-8">
@@ -780,7 +801,7 @@ AOS.init({
 
   <!-- Projects Section -->
   <section id="projects" class="container py-5">
-    <h2 class="text-center fw-bold">Projects</h2>
+    <h2 class="text-center fw-bold" data-aos="fade-down">Projects</h2>
     <div class="section-title-line"></div>
     <div class="row g-4">
       <!-- Project Card 1 -->
@@ -837,7 +858,7 @@ AOS.init({
 
   <!-- Certifications Section -->
   <section id="certification" class="container py-5">
-    <h2 class="text-center fw-bold">Certifications</h2>
+    <h2 class="text-center fw-bold" data-aos="fade-down">Certifications</h2>
     <div class="section-title-line"></div>
     <div class="row justify-content-center">
       <div class="col-md-8">
@@ -858,7 +879,7 @@ AOS.init({
   <!-- Technical Expertise Section -->
 
   <section id="expertise" class="container py-5">
-    <h2 class="text-center fw-bold">Technical Expertise</h2>
+    <h2 class="text-center fw-bold" data-aos="fade-down">Technical Expertise</h2>
     <div class="section-title-line"></div>
     <div class="row justify-content-center">
       <div class="col-md-8 bg-white p-4 rounded-4 shadow-sm">
@@ -880,7 +901,7 @@ AOS.init({
 
   <!-- Achievements Section -->
   <section id="achievement" class="container py-5">
-    <h2 class="text-center fw-bold">Achievements</h2>
+    <h2 class="text-center fw-bold" data-aos="fade-down">Achievements</h2>
     <div class="section-title-line"></div>
     <div class="row text-center g-4">
       <div class="col-md-4">
@@ -906,7 +927,7 @@ AOS.init({
 
   <!-- Resume Section -->
   <section id="resume" class="container py-5">
-    <h2 class="text-center fw-bold">Resume</h2>
+    <h2 class="text-center fw-bold" data-aos="fade-down">Resume</h2>
     <div class="section-title-line"></div>
     <div class="resume-card">
       <div class="resume-header">
@@ -971,7 +992,7 @@ AOS.init({
 
   <!-- Contact Section -->
   <section id="contact" class="container py-5">
-    <h2 class="text-center fw-bold">Contact Me</h2>
+    <h2 class="text-center fw-bold" data-aos="fade-down">Contact Me</h2>
     <div class="section-title-line"></div>
     <div class="row justify-content-center">
       <div class="col-md-6">
@@ -1114,15 +1135,15 @@ AOS.init({
   <script>
     document.querySelectorAll('.nav-link-grow').forEach(link => {
       link.addEventListener('click', function (e) {
-       
+
         const targetId = this.getAttribute('href');
         const targetSection = document.querySelector(targetId);
         const menuToggle = document.getElementById('collapsibleNavbar');
 
         if (targetSection) {
-          e.preventDefault(); 
+          e.preventDefault();
 
-         
+
           targetSection.scrollIntoView({ behavior: 'smooth' });
 
           setTimeout(() => {
