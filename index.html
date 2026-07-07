@@ -526,6 +526,11 @@
             </a>
           </li>
           <li class="nav-item">
+            <a class="nav-link nav-link-grow px-3" href="#expertise">
+              <i class="bi bi-briefcase-fill me-1"></i> EXPERIENCE
+            </a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link nav-link-grow px-3" href="#achievement">
               <i class="bi bi-trophy-fill me-1"></i> ACHIEVEMENTS
             </a>
@@ -738,17 +743,17 @@
           </div>
         </div>
       </div>
-<div class="col-lg-3 col-md-4 col-sm-6">
-  <div class="card border-0 shadow-sm h-100 skill-card bg-white">
-    <div class="card-body p-4 d-flex flex-column align-items-center justify-content-center">
-      <div class="icon-box mb-3 d-flex align-items-center justify-content-center rounded-circle"
-        style="width: 80px; height: 80px; background: rgba(55,118,171,.12);">
-        <i class="bi bi-filetype-py display-5" style="color:#3776AB;"></i>
+      <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="card border-0 shadow-sm h-100 skill-card bg-white">
+          <div class="card-body p-4 d-flex flex-column align-items-center justify-content-center">
+            <div class="icon-box mb-3 d-flex align-items-center justify-content-center rounded-circle"
+              style="width: 80px; height: 80px; background: rgba(55,118,171,.12);">
+              <i class="bi bi-filetype-py display-5" style="color:#3776AB;"></i>
+            </div>
+            <h6 class="fw-bold m-0">Python</h6>
+          </div>
+        </div>
       </div>
-      <h6 class="fw-bold m-0">Python</h6>
-    </div>
-  </div>
-</div>
     </div>
   </section>
 
@@ -855,7 +860,6 @@
       </div>
     </div>
   </section>
-
   <!-- Certifications Section -->
   <section id="certification" class="container py-5">
     <h2 class="text-center fw-bold" data-aos="fade-down">Certifications</h2>
@@ -863,18 +867,126 @@
     <div class="row justify-content-center">
       <div class="col-md-8">
         <ul class="list-group shadow-sm rounded-4 border-0">
-          <li class="list-group-item d-flex align-items-center p-3 border-light"><i
-              class="bi bi-patch-check-fill text-success me-3 fs-5"></i> Web Development Frameworks - Coursera</li>
-          <li class="list-group-item d-flex align-items-center p-3 border-light"><i
-              class="bi bi-patch-check-fill text-success me-3 fs-5"></i> Bootstrap 5 Masterclass Component Modules -
-            Udemy</li>
-          <li class="list-group-item d-flex align-items-center p-3 border-light"><i
-              class="bi bi-patch-check-fill text-success me-3 fs-5"></i> JavaScript Developer Fundamentals -
-            FreeCodeCamp</li>
+
+          <!-- Certificate 1 -->
+          <li class="list-group-item d-flex align-items-center p-3 border-light">
+
+            <button class="btn p-0 border-0 me-3" data-bs-toggle="modal" data-bs-target="#certModal1"
+              title="Open Certificate">
+              <img src="IMAGE/c1.jpg" alt="Coursera Web Dev" class="img-fluid rounded"
+                style="width: 40px; height: 40px; object-fit: cover;">
+            </button>
+            <div class="flex-grow-1">
+              <i class="bi bi-patch-check-fill text-success me-2 fs-5"></i> quiz
+            </div>
+          </li>
+
+          <!-- Certificate 2 -->
+          <li class="list-group-item d-flex align-items-center p-3 border-light">
+            <button class="btn p-0 border-0 me-3" data-bs-toggle="modal" data-bs-target="#certModal2"
+              title="Open Certificate">
+              <img src="IMAGE/c2.jpg" alt="Udemy Bootstrap" class="img-fluid rounded"
+                style="width: 40px; height: 40px; object-fit: cover;">
+            </button>
+            <div class="flex-grow-1">
+              <i class="bi bi-patch-check-fill text-success me-2 fs-5"></i>c programing language
+            </div>
+          </li>
+
+          <!-- Certificate 3 -->
+          <li class="list-group-item d-flex align-items-center p-3 border-light">
+            <button class="btn p-0 border-0 me-3" data-bs-toggle="modal" data-bs-target="#certModal3"
+              title="Open Certificate">
+              <img src="IMAGE/c3.jpg" alt="FreeCodeCamp JS" class="img-fluid rounded"
+                style="width: 40px; height: 40px; object-fit: cover;">
+            </button>
+            <div class="flex-grow-1">
+              <i class="bi bi-patch-check-fill text-success me-2 fs-5"></i> line follower robot
+            </div>
+          </li>
+
+          <!-- Certificate 4 -->
+          <li class="list-group-item d-flex align-items-center p-3 border-light">
+            <button class="btn p-0 border-0 me-3" data-bs-toggle="modal" data-bs-target="#certModal4"
+              title="Open Certificate">
+              <img src="IMAGE/c4.jpg" alt="New Certification" class="img-fluid rounded"
+                style="width: 40px; height: 40px; object-fit: cover;">
+            </button>
+            <div class="flex-grow-1">
+              <i class="bi bi-patch-check-fill text-success me-2 fs-5"></i>componuent clash
+            </div>
+          </li>
+
         </ul>
       </div>
     </div>
   </section>
+
+
+  <!-- Modal 1 -->
+  <div class="modal fade" id="certModal1" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content rounded-4 shadow">
+        <div class="modal-body text-center p-4">
+          <img src="IMAGE/c1.jpg" class="img-fluid rounded mb-3" alt="Certificate 1">
+          <div>
+
+            <button type="button" class="btn btn-secondary px-4 rounded-pill" data-bs-dismiss="modal">
+              <i class="bi bi-arrow-left me-2"></i>Back to Certificates
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2 -->
+  <div class="modal fade" id="certModal2" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content rounded-4 shadow">
+        <div class="modal-body text-center p-4">
+          <img src="IMAGE/c2.jpg" class="img-fluid rounded mb-3" alt="Certificate 2">
+          <div>
+            <button type="button" class="btn btn-secondary px-4 rounded-pill" data-bs-dismiss="modal">
+              <i class="bi bi-arrow-left me-2"></i>Back to Certificates
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 3 -->
+  <div class="modal fade" id="certModal3" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content rounded-4 shadow">
+        <div class="modal-body text-center p-4">
+          <img src="IMAGE/c3.jpg" class="img-fluid rounded mb-3" alt="Certificate 3">
+          <div>
+            <button type="button" class="btn btn-secondary px-4 rounded-pill" data-bs-dismiss="modal">
+              <i class="bi bi-arrow-left me-2"></i>Back to Certificates
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 4 -->
+  <div class="modal fade" id="certModal4" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content rounded-4 shadow">
+        <div class="modal-body text-center p-4">
+          <img src="IMAGE/c4.jpg" class="img-fluid rounded mb-3" alt="Certificate 4">
+          <div>
+            <button type="button" class="btn btn-secondary px-4 rounded-pill" data-bs-dismiss="modal">
+              <i class="bi bi-arrow-left me-2"></i>Back to Certificates
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Technical Expertise Section -->
 
